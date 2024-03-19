@@ -26,8 +26,8 @@ export const Register = () => {
     const doRegister = async () => {
         try {
             setError('');
-            if (
-                 !name || name.trim().length < 2
+            if (!image || image.trim().length < 1
+                || !name || name.trim().length < 2
                 || !email || email.trim().length < 5
                 || !password || password.trim().length < 4
                 || !confirm || confirm.trim().length < 4
