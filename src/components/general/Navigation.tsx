@@ -22,8 +22,8 @@ export const Navigation = () => {
         return avatarIcon;
     }
 
-    const getIcon = (name: string) => {
-        switch (name) {
+    const getIcon = (nome: string) => {
+        switch (nome) {
             case 'home':
                 if (location.pathname !== '/user' &&
                     location.pathname !== '/link' &&

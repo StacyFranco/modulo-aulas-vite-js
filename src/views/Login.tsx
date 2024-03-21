@@ -49,10 +49,10 @@ export const Login = () => {
                 {error && <p className='error'>{error}</p>}
                 {success && <p className='success'>Cadastro efetuado com sucesso, faça seu login.</p>}
 
-                <PublicInput icon={loginIcon} alt="Email" name="Email"
+                <PublicInput icon={loginIcon} alt="Email" nome="Email"
                     type="text" modelValue={login} setValue={setLogin}/>
                 
-                <PublicInput icon={passwordIcon} alt="Senha" name="Senha"
+                <PublicInput icon={passwordIcon} alt="Senha" nome="Senha"
                     type="password" modelValue={password} setValue={setPassword}/>
 
                 <button type='button' onClick={doLogin} disabled={loading}>

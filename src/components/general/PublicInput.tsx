@@ -4,7 +4,7 @@ import { useState } from "react"
 type PublicInputType = {
     icon: string,
     alt?: string,
-    name: string,
+    nome: string,
     type: string,
     modelValue: string,
     setValue(s: string): void
@@ -13,7 +13,7 @@ type PublicInputType = {
 export const PublicInput: React.FC<PublicInputType> = ({
     icon,
     alt,
-    name,
+    nome,
     type,
     modelValue,
     setValue
@@ -23,8 +23,8 @@ export const PublicInput: React.FC<PublicInputType> = ({
     return (
         <div className={"input " + (focus ? 'focus' : '')}>
             <img src={icon} alt={alt} />
-            <input type={type} placeholder={name} 
-                name={name}
+            <input type={type} placeholder={nome} 
+                nome={nome}
                 value={modelValue}
                 onChange={e => setValue(e.target.value)} 
                 onFocus={() => setFocus(true)}

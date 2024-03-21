@@ -1,14 +1,14 @@
 import { HttpApiServices } from "./HttpApiServices";
 
-export class MeetServices extends HttpApiServices {
+export class ModuloServices extends HttpApiServices {
 
-    baseUrl = '/meet';
+    baseUrl = '/modulo';
 
-    async getMeets(){
+    async getModulos(){
         return await this.get(this.baseUrl);
     }
 
-    async getMeetById(id: string){
+    async getModuloById(id: string){
         return await this.get(this.baseUrl+'/'+id);
     }
 
@@ -16,15 +16,15 @@ export class MeetServices extends HttpApiServices {
         return await this.get(this.baseUrl+'/objects/'+id);
     }
 
-    async deleteMeet(id: string){
+    async deleteModulo(id: string){
         return await this.delete(this.baseUrl+'/'+id);
     }
 
-    async createMeet(body: any){
+    async createModulo(body: any){
         return await this.post(this.baseUrl, body);
     }
 
-    async updateMeet(body: any, id: string){
+    async updateModulo(body: any, id: string){
         return await this.put(this.baseUrl+'/'+id, body);
     }
 }

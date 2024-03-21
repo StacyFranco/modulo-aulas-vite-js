@@ -16,7 +16,7 @@ export const Register = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [image, setImage] = useState('');
-    const [name, setName] = useState('');
+    const [nome, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirm, setConfirm] = useState('');
@@ -27,7 +27,7 @@ export const Register = () => {
         try {
             setError('');
             if (!image || image.trim().length < 1
-                || !name || name.trim().length < 2
+                || !nome || nome.trim().length < 2
                 || !email || email.trim().length < 5
                 || !password || password.trim().length < 4
                 || !confirm || confirm.trim().length < 4
@@ -42,7 +42,7 @@ export const Register = () => {
             setLoading(true);
 
             const body = { 
-                name, 
+                nome, 
                 email,
                 password,
                 avatar: image
@@ -69,10 +69,10 @@ export const Register = () => {
 
                 {error && <p className='error'>{error}</p>}
 
-                <PublicInput icon={userIcon} name='Nome' alt='Nome' modelValue={name} type='text' setValue={setName} />
-                <PublicInput icon={emailIcon} name='Email' alt='Email' modelValue={email} type='text' setValue={setEmail} />
-                <PublicInput icon={passwordIcon} name='Senha' alt='Senha' modelValue={password} type='password' setValue={setPassword} />
-                <PublicInput icon={passwordIcon} name='Confirme a senha' alt='Confirme a senha' modelValue={confirm} type='password' setValue={setConfirm} />
+                <PublicInput icon={userIcon} nome='Nome' alt='Nome' modelValue={nome} type='text' setValue={setName} />
+                <PublicInput icon={emailIcon} nome='Email' alt='Email' modelValue={email} type='text' setValue={setEmail} />
+                <PublicInput icon={passwordIcon} nome='Senha' alt='Senha' modelValue={password} type='password' setValue={setPassword} />
+                <PublicInput icon={passwordIcon} nome='Confirme a senha' alt='Confirme a senha' modelValue={confirm} type='password' setValue={setConfirm} />
 
                 <button type='button' disabled={loading} onClick={doRegister}>{loading ? '...Carregando' : 'Cadastrar'}</button>
 

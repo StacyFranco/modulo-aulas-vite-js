@@ -1,13 +1,13 @@
 import { Footer } from "../components/general/Footer";
 import { Header } from "../components/general/Header"
-import { MeetHome } from "../components/meet/MeetHome";
+import { ModuloHome } from "../components/modulo/ModuloHome";
 
 
 export const Home = () => {
     return (
         <>
             <Header />
-            <MeetHome />
+            <ModuloHome />
             <Footer />
         </>
     );

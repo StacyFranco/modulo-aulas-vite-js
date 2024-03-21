@@ -1,5 +1,5 @@
 import { PublicInput } from "../general/PublicInput";
-import { MeetUserHeader } from "../meet/MeetUserHeader";
+import { ModulosHeader } from "../modulo/ModulosHeader";
 
 import chainIcon from '../../assets/images/chain.svg';
 import { useState } from "react";
@@ -22,10 +22,10 @@ export const RoomLink = () => {
     return (
         <div className="container-principal">
             <div className="container-meet link">
-                <MeetUserHeader isLink={true}/>
+                <ModulosHeader isLink={true}/>
                 {error && <p className="error">{error}</p>}
                 <PublicInput icon={chainIcon}
-                    type="text" alt="Link" name="Informe o link da reunião para entrar"
+                    type="text" alt="Link" nome="Informe o link da reunião para entrar"
                     modelValue={link} setValue={setLink}
                     />
                 <button onClick={navigateToRoom}>Entrar</button>

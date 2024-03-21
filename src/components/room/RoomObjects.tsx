@@ -10,7 +10,7 @@ export const RoomObjects : React.FC<RoomObjectsProps> = ({objects, enterRoom}) =
 
     const getImageFromObject = (object: any) => {
         if (object && object._id) {
-            const path = `../../assets/objects/${object?.type}/${object.name}${object.orientation? "_"+ object.orientation : ''}.png`;
+            const path = `../../assets/objects/${object?.type}/${object.nome}${object.orientation? "_"+ object.orientation : ''}.png`;
             const imageUrl = new URL(path, import.meta.url);
             return imageUrl.href;
         }

@@ -13,7 +13,7 @@ export class LoginServices extends HttpApiServices{
                 const user = userResponse.data;
 
                 localStorage.setItem('id', user.id);
-                localStorage.setItem('name', user.name);
+                localStorage.setItem('nome', user.nome);
 
                 if(user.avatar){
                     localStorage.setItem('avatar', user.avatar);

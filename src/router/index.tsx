@@ -3,8 +3,6 @@ import { Home } from "../views/Home";
 import {Login} from '../views/Login';
 import { Profile } from "../views/Profile";
 import {Register} from '../views/Register';
-import { MeetAddView } from "../views/MeetAdd";
-import { MeetEditView } from "../views/MeetEdit";
 import { LinkView } from "../views/Link";
 
 export const getRouter = (token: string) => {
@@ -12,6 +10,11 @@ export const getRouter = (token: string) => {
         return createBrowserRouter([
             {
                 path: '*',
+                id: 'home',
+                element: <Home/>
+            },
+            {
+                path: '/login',
                 id: 'login',
                 element: <Login/>
             }, 
@@ -39,17 +42,8 @@ export const getRouter = (token: string) => {
         const mobile = window.innerWidth <= 992;
 
         if(!mobile){
-            router.push({
-                path: '/add',
-                id: 'add',
-                element: <MeetAddView />
-            });
-
-            router.push({
-                path: '/edit/:meetId',
-                id: 'edit',
-                element: <MeetEditView />
-            });
+          
+           
         }else{
             router.push({
                 path: '/link',

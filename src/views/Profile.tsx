@@ -17,18 +17,18 @@ export const Profile = () => {
 
     const navigate = useNavigate();
     const {setToken} = useContext(AuthorizeContext);
-    const [name, setName] = useState(localStorage.getItem('name') || '');
+    const [nome, setName] = useState(localStorage.getItem('nome') || '');
     const [image, setImage] = useState(localStorage.getItem('avatar') || '');
 
     const mobile = window.innerWidth <= 992;
 
     const finishUpdate = async() => {
         try{
-            if(!name || name.trim().length < 2){
+            if(!nome || nome.trim().length < 2){
                 return;
             }
     
-            const body = { name } as any;
+            const body = { nome } as any;
     
             if(image){
                 body.avatar = image;
@@ -36,7 +36,7 @@ export const Profile = () => {
     
             await userServices.update(body);
 
-            localStorage.setItem('name', name);
+            localStorage.setItem('nome', nome);
 
             if(image){
                 localStorage.setItem('avatar', image);
@@ -61,14 +61,14 @@ export const Profile = () => {
         <>
             {!mobile && <Header />}
             <div className="container-profile">
-                <ActionHeader actionCallback={finishUpdate} disabled={!name}/>
+                <ActionHeader actionCallback={finishUpdate} disabled={!nome}/>
                 <AvatarInput image={image} setImage={setImage} />
                 <div className="input">
                     <div>
                         <span>Nome</span>
                         <input type="text" placeholder="Informe seu nome" 
-                            value={name} onChange={e => setName(e.target.value)} />
-                        {name && <img src={clearIcon} alt="limpar" onClick={() => setName('')} />}
+                            value={nome} onChange={e => setName(e.target.value)} />
+                        {nome && <img src={clearIcon} alt="limpar" onClick={() => setName('')} />}
                     </div>
                 </div>
                 <div className="logout">
