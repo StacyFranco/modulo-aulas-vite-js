@@ -65,18 +65,18 @@ export const ModuloAulasPicker: React.FC<ModuloAulasPickerType> = ({  moduloName
     return (
         <div className="container-aula-picker">
             <div className="action" onClick={() => setShow(!show)}>
-                
-                <span>{moduloName}</span>
                 {!show 
-                    ? <img src={downIcon} /> 
-                    : <img src={rightIcon} />
+                    ? <img src={rightIcon} /> 
+                    : <img src={downIcon} />
                 }
-                <span>{`N° Aulas ${aulas.length}`}</span>
+                <span className='modulo-span'>{moduloName}</span>
+                <span>{`${aulas.length}  Aulas`}</span>
             </div>
-            {show && <div className='meet'>
+            {show && <div className='container-aula'>
                 {aulas.map((a: any) =>
-                    <div key={a}  className={a === selected ? 'selected' : ''} onClick={() => selectAula(a)}>
-                        <span>{a.nome}</span>    
+                    <div key={a}  className={`aula ${a === selected ? 'selected' : ''}`} onClick={() => selectAula(a)}>
+                        <span>{a.nome}</span>   
+                        <span>{a.data}</span> 
                     </div>
                 )}
             </div>}

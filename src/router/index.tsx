@@ -3,7 +3,6 @@ import { Home } from "../views/Home";
 import {Login} from '../views/Login';
 import { Profile } from "../views/Profile";
 import {Register} from '../views/Register';
-import { LinkView } from "../views/Link";
 
 export const getRouter = (token: string) => {
     if(!token){
@@ -41,16 +40,10 @@ export const getRouter = (token: string) => {
 
         const mobile = window.innerWidth <= 992;
 
-        if(!mobile){
+       
           
            
-        }else{
-            router.push({
-                path: '/link',
-                id: 'link',
-                element: <LinkView />
-            });
-        }
+        
 
         return  createBrowserRouter(router);
     }

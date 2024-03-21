@@ -26,8 +26,6 @@ const sortFunction: any = ((a: any, b:any) => {
 export const ModuloList: React.FC<ModuloListProps> = ({ setLink }) => {
 
     const [modulos, setModulos] = useState([]);
-
-
     const [selected, setSelected] = useState<string | null>(null);
 
     const getModulos = async () => {
